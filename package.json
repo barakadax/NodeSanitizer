@@ -1,7 +1,7 @@
 {
   "name": "barakadax-sanitizer",
-  "version": "1.0.5",
-  "description": "Specific CWEs sanitizer",
+  "version": "1.0.7",
+  "description": "CWEs sanitizer",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -23,18 +23,23 @@
     "url": "git://github.com/barakadax/NodeSanitizer.git"
   },
   "keywords": [
-    "Sanitizer",
-    "Sanitize",
-    "TypeScript",
-    "JavaScript",
-    "Barakadax",
+    "sanitizer",
+    "sanitize",
+    "typeScript",
+    "javaScript",
+    "barakadax",
     "injection",
-    "CWE",
+    "inject",
+    "cwe",
     "logging",
     "logs",
-    "log"
+    "log",
+    "sanitization",
+    "user input",
+    "input",
+    "filtering"
   ],
   "devDependencies": {
-    "tsup": "^8.0.2"
+    "tsup": "*"
   }
 }
