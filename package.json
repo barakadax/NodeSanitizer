@@ -1,0 +1,22 @@
+{
+  "name": "barakadax-sanitizer",
+  "version": "1.0.0",
+  "description": "Specific CWE sanitizer",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  },
+  "author": {
+    "name": "Barak Taya",
+    "url": "https://barakadax.github.io/"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "ts-node": "*",
+    "typescript": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/barakadax/NodeSanitizer.git"
+  }
+}
