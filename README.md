@@ -1,7 +1,7 @@
 # Barakadax Sanitizer
 
 [![npm](https://img.shields.io/npm/v/barakadax-sanitizer.svg)](https://www.npmjs.com/package/barakadax-sanitizer)
-[![downloads](https://img.shields.io/npm/dt/barakadax-sanitizer.svg)](https://www.npmjs.com/package/barakadax-sanitizer)<br><br>
+[![downloads](https://img.shields.io/npm/dt/barakadax-sanitizer.svg)](https://www.npmjs.com/package/barakadax-sanitizer)<br>
 NPM package for specific sanitization to solve CWEs.<br><br>
 
 How to install:
@@ -26,7 +26,7 @@ console.log('Sanitized String:', sanitizedString);
 
 <ul>
     <li>
-        Logging - [CWE-117](https://cwe.mitre.org/data/definitions/117.html)
+        Logging - <a href="https://cwe.mitre.org/data/definitions/117.html" target="_blank">CWE-117</a>
     </li>
 </ul>
 
