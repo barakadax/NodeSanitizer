@@ -1,6 +1,6 @@
 {
   "name": "barakadax-sanitizer",
-  "version": "1.0.0",
+  "version": "1.0.0.1",
   "description": "Specific CWE sanitizer",
   "main": "index.ts",
   "scripts": {
@@ -18,5 +18,17 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/barakadax/NodeSanitizer.git"
-  }
+  },
+  "keywords": [
+    "Sanitizer",
+    "Sanitize",
+    "TypeScript",
+    "JavaScript",
+    "Barakadax",
+    "injection",
+    "CWE",
+    "logging",
+    "logs",
+    "log"
+  ]
 }
