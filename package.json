@@ -1,7 +1,7 @@
 {
   "name": "barakadax-sanitizer",
-  "version": "1.0.3",
-  "description": "Specific CWE sanitizer",
+  "version": "1.0.4",
+  "description": "Specific CWEs sanitizer",
   "main": "index.ts",
   "scripts": {
     "start": "ts-node src/index.ts"
