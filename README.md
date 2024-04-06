@@ -15,8 +15,8 @@ npm i barakadax-sanitizer
 <ul>
     <li>
         Logging - <a href="https://cwe.mitre.org/data/definitions/117.html" target="_blank">CWE-117</a>
-
-        ```shell
+    
+```shell
 import { Logging } from 'barakadax-sanitizer';
 
 let logger = new Logging();
@@ -24,7 +24,8 @@ let inputString = 'This is a %1w test string %2x';
 let sanitizedString = logger.sanitize(inputString);
 
 console.log('Sanitized String:', sanitizedString);
-        ```
-    </li>
+```
+
+</li>
 </ul>
 
