@@ -1,7 +1,9 @@
 # Barakadax Sanitizer
 
 [![npm](https://img.shields.io/npm/v/barakadax-sanitizer.svg)](https://www.npmjs.com/package/barakadax-sanitizer)
-[![downloads](https://img.shields.io/npm/dt/barakadax-sanitizer.svg)](https://www.npmjs.com/package/barakadax-sanitizer)<br>
+[![downloads](https://img.shields.io/npm/dt/barakadax-sanitizer.svg)](https://www.npmjs.com/package/barakadax-sanitizer)
+[![CodeQL](https://github.com/barakadax/NodeSanitizer/actions/workflows/codeql.yml/badge.svg)](https://github.com/barakadax/NodeSanitizer/actions/workflows/codeql.yml)
+[![Dependency review](https://github.com/barakadax/NodeSanitizer/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/barakadax/NodeSanitizer/actions/workflows/dependency-review.yml)<br>
 NPM package for sanitization to solve CWEs.<br>
 
 How to install:
