@@ -1,6 +1,6 @@
 {
   "name": "barakadax-sanitizer",
-  "version": "1.0.13",
+  "version": "1.0.12",
   "description": "CWEs sanitizer",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
