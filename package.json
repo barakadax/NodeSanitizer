@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "tsup",
-    "test": "jest --detectOpenHandles --forceExit"
+    "tests": "jest --detectOpenHandles --forceExit"
   },
   "author": {
     "name": "Barak Taya",

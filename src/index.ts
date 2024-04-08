@@ -1,17 +1,21 @@
 'use strict';
 
+// TODO: Add ';' sanitization for commands injection CWE-116
+
 /**
  * Sanitize before console.log
- * Solves: CWE-117
+ * Solves log injection, remove unprintable characters, sanitize special HTML characters
  */
 export class Logging {
     private readonly spaces: RegExp;
     private readonly logInjection: RegExp;
+    private readonly unprintableCharacters: RegExp;
     private readonly html: { [key: string]: string };
 
     constructor() {
         this.spaces = /\s+/g;
         this.logInjection = /%\d\w/g;
+        this.unprintableCharacters = /[\x00-\x09\x0B\x0C\x0E-\x1F\x7F]/g;
         this.html = {
             "&": "&amp;",
             "<": "&lt;",
@@ -32,7 +36,9 @@ export class Logging {
      * @returns sanitized string
      */
     public sanitize(input: string, shouldTrim: boolean = false): string {
-        let result = input.replace(this.logInjection, '');
+        let result = input.replace(this.unprintableCharacters, '');
+
+        result = result.replace(this.logInjection, '');
 
         result = result.replace(/[&<>"'`=\/]/g, (s) => {
             return this.html[s];
