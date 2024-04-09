@@ -43,3 +43,10 @@ console.log('Sanitized String:', sanitizedFilePath);
 </li>
 </ul>
 
+## TODO:
+<ol>
+    <li>Split to files</li>
+    <li>Add interfaces / abstraction</li>
+    <li>Split to logger to classes</li>
+    <li>Add SQL injection</li>
+</ol>
