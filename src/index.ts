@@ -1,7 +1,5 @@
 'use strict';
 
-// TODO: Add ';' sanitization for commands injection CWE-116
-
 /**
  * Sanitize before console.log
  * Solves log injection, remove unprintable characters, sanitize special HTML characters
@@ -36,18 +34,50 @@ export class Logging {
      * @returns sanitized string
      */
     public sanitize(input: string, shouldTrim: boolean = false): string {
-        let result = input.replace(this.unprintableCharacters, '');
-
-        result = result.replace(this.logInjection, '');
+        let result: string = input.replace(this.unprintableCharacters, '')
+            .replace(this.logInjection, '');
 
         result = result.replace(/[&<>"'`=\/]/g, (s) => {
             return this.html[s];
         });
 
         if (shouldTrim) {
-            result = result.replace(this.spaces, ' ').trim();;
+            return result.replace(this.spaces, ' ').trim();;
         }
 
         return result;
+    }
+}
+
+/**
+ * Sanitize before writing/reading files
+ * Solves path traversal and injections
+ */
+export class Filing {
+    private readonly dots: RegExp;
+    private readonly illegalCharacters: RegExp;
+    private readonly unprintableCharacters: RegExp;
+    private readonly windowsSavedWords: RegExp;
+    private readonly windowsNoExtension: RegExp;
+
+    constructor() {
+        this.dots = /^\.+$/;
+        this.illegalCharacters = /[\/\?<>\\:\*\|"]/g;
+        this.unprintableCharacters = /[\x00-\x1f\x80-\x9f]/g;
+        this.windowsSavedWords = /^(con|prn|aux|nul|com[0-9]|lpt[0-9])(\..*)?$/i;
+        this.windowsNoExtension = /[\. ]+$/;
+    }
+
+    /**
+     * Sanitize string before files usage
+     * @param input string you want to sanitize
+     * @returns sanitized string
+     */
+    public sanitize(input: string, shouldTrim: boolean = false): string {
+        return input.replace(this.dots, '')
+            .replace(this.illegalCharacters, '')
+            .replace(this.unprintableCharacters, '')
+            .replace(this.windowsSavedWords, '')
+            .replace(this.windowsNoExtension, '');
     }
 }

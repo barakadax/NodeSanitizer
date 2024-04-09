@@ -15,17 +15,29 @@ npm i barakadax-sanitizer
 ## Classes and what they solves:
 
 <ul>
-    <li>
-        Logging - <a href="https://cwe.mitre.org/data/definitions/117.html" target="_blank">CWE-117</a>
+    <li>Logging
     
 ```shell
 import { Logging } from 'barakadax-sanitizer';
 
-let logger = new Logging();
+let logger: Logging = new Logging();
 let inputString = 'This is a %1w test string %2x';
 let sanitizedString = logger.sanitize(inputString);
 
 console.log('Sanitized String:', sanitizedString);
+```
+
+</li>
+    <li>Filing
+
+```shell
+import { Filing } from 'barakadax-sanitizer';
+
+let filing: Filing = new Filing();
+let filePath = '../myFolder/.\../myPic.png';
+let sanitizedFilePath = filing.sanitize(filePath);
+
+console.log('Sanitized String:', sanitizedFilePath);
 ```
 
 </li>

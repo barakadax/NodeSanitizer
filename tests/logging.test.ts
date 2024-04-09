@@ -1,7 +1,14 @@
+'use strict';
+
 import { Logging } from '../src';
 
-test('All sanitization', () => {
-    let logger = new Logging();
+let logger: Logging;
+
+beforeAll(() => {
+    logger = new Logging();
+});
+
+test('All logger sanitization', () => {
     let inputString = 'This %0a%0a INFO:+<tag>+==Example עברית 🎃';
     let sanitizedString = logger.sanitize(inputString);
 
@@ -9,7 +16,6 @@ test('All sanitization', () => {
 });
 
 test('All sanitization with trim', () => {
-    let logger = new Logging();
     let inputString = 'This %0a%0a INFO:+<tag>+==Example';
     let sanitizedString = logger.sanitize(inputString, true);
 
@@ -17,7 +23,6 @@ test('All sanitization with trim', () => {
 });
 
 test('Log injection', () => {
-    let logger = new Logging();
     let inputString = 'This is a %1w test string %2x';
     let sanitizedString = logger.sanitize(inputString);
 
@@ -25,7 +30,6 @@ test('Log injection', () => {
 });
 
 test('Trimming', () => {
-    let logger = new Logging();
     let inputString = '  This is a  test string ';
     let sanitizedString = logger.sanitize(inputString, true);
 
@@ -33,7 +37,6 @@ test('Trimming', () => {
 });
 
 test('Remove HTML characters', () => {
-    let logger = new Logging();
     let inputString = '<tag>& != |</tag>';
     let sanitizedString = logger.sanitize(inputString);
 
@@ -41,7 +44,6 @@ test('Remove HTML characters', () => {
 });
 
 test('Unprintable characters', () => {
-    let logger = new Logging();
     let inputString = 'Hello\x00 \v World\x7F';
     let sanitizedString = logger.sanitize(inputString);
 
@@ -49,7 +51,6 @@ test('Unprintable characters', () => {
 });
 
 test('Unicode support', () => {
-    let logger = new Logging();
     let inputString = '🎃עברית';
     let sanitizedString = logger.sanitize(inputString);
 
